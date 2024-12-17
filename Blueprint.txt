@@ -1,0 +1,49 @@
+** Name
+Female Delusion Calculator
+
+
+** Description
+A frontend with a simple formulary where the user (most likely a woman) adds input to provide data
+ to do a research and find the possibilities to match the man of her dreams in the USA population,
+ based on the data provided by USA census. The input should be a minimum and maximum age, a height,
+ a race, and a range of expected salary (the sort of materialistic things women look for in a man),
+ and then this data is passed to backend as a dictionary. Then the backend fetches all men population
+ in the given range of age, filters that data using the height, race and salary range, calculates the
+ percent of this result against the total population of men (in all the country) and returns that percent.
+The frontend then will show a range of delusion based on how low is this percent. 
+
+** Context
+Full stack project with frontend using tailwind css,typescript and react, backend with python,
+ FastAPI, pandas and any other library we consider necessary as we go.
+
+Frontend:
+A simple formulary with a sort of inputs to enter: range of integers (for range of age), race (select with options),
+ float number (expected salary, this input will be used to get the salary range), and another
+ float number (the minimum height). Such data is passed to backend.
+
+Backend:
+Receives the dictionary input from the frontend, and uses the range of age to fetch the total number
+ of men in USA population (using the census). Retrieves the amount of men in that range, all this
+ with the corresponding statistics (height, race, salary range).
+Filters men in range of age using the inputs till finds the amount of men matching such data.
+Calculates the percent of this number against the total population of USA, and returns the percent to the frontend 
+
+Fetched data:
+	age (from 18 to 65) The frontend will use a range input for that
+	race (the ones we found) 
+	height	The user will give a min height to filter this
+	salary	Also will be filtered with user input
+
+URLs, directions:
+Age (18-65): The Census Data API and American Community Survey (ACS) provide age distribution information, and you can easily filter individuals aged between 18 and 65​
+CENSUS.GOV
+.
+Race: The Census API includes comprehensive race categories​
+CENSUS.GOV
+.
+Height and Weight: You can obtain this data through CDC NHANES datasets and NCD-RisC data downloads​
+CDC
+​
+NCD-RISC
+.
+Salary (Income): This information is available in the Census Data API, specifically in the ACS dataset
